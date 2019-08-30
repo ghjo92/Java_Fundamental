@@ -9,7 +9,7 @@ public class StaticMethodDemo {
 	}
 	
 	public void m2() {
-		//instance method에서는 
+		//instance m xethod에서는 
 		//instance 변수, static 변수 사용 가능
 		//instance 메소드, static 메소드 사용가능
 		name = "성영한 ";
@@ -25,9 +25,10 @@ public class StaticMethodDemo {
 	
 	public static void m4() {
 		//static 메소드에서는 this를 사용할 수 없음.
-		//instance method에서는 
+		//static method에서는 
 		//instance 변수 불가능, static 변수 사용 가능
 		//instance 메소드 불가능, static 메소드 사용가능
+		
 		//name = "홍길동 ";
 		interestRate = 0.3;
 		//m1();

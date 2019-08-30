@@ -3,6 +3,7 @@ package java_20190723;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class CalendarDemo {
 	public static String console() throws IOException{
@@ -11,6 +12,7 @@ public class CalendarDemo {
 	}
 	
 	public static void main(String[] args) throws IOException{
+
 		while(true) {
 			System.out.println("날짜를 입력하세요>");
 			String readLine = console();

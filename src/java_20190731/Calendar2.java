@@ -1,8 +1,11 @@
-package java_20190723;
+package java_20190731;
+
+import java.util.Calendar;
+
 /**
  Calendar 클래스는 년도별, 월별, 요일을 구할 수 있는 클래스 입니다.
  */
-public class Calendar {
+public class Calendar2 {
 	public static final int SUNDAY = 0;
 	public static final int MONDAY = 1;
 	public static final int TUESDAY = 2;
@@ -53,8 +56,9 @@ public class Calendar {
 	 년월일에 해당하는 요일출력
 	 */
 	public void print(int year, int month, int day) {
-
-		int dayOfWeek = getCount(year, month, day) % 7;
+		Calendar c = Calendar.getInstance();
+		c.set(year, month-1, day);
+		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK) - 1;
 		String[] oneWeek = { "일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일" };
 		/*
 		 * if(dayOfWeek == Calendar.MONDAY) {
@@ -80,15 +84,16 @@ public class Calendar {
 	 해당하는 월의 달력을 출력
 	 */
 	public void print(int year, int month) {
-
-		int dayOfWeek = getCount(year, month, 1) % 7;
+		Calendar c = Calendar.getInstance();
+		c.set(year, month-1, 1);
+		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK) - 1 ;
 
 		System.out.printf("%d년 %d월%n", year, month);
 		System.out.printf("일\t월\t화\t수\t목\t금\t토\n");
 
 		for (int i = 0; i < dayOfWeek; i++)
 			System.out.printf("\t");
-		for (int i = 1; i <= getLastday(year, month); i++) {
+		for (int i = 1; i <= c.getActualMaximum(Calendar.DATE); i++) {
 			System.out.printf("%d", i);
 			if ((i + dayOfWeek) % 7 == 0) {
 				System.out.printf("\n");
